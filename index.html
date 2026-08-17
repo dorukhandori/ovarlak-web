@@ -6,28 +6,41 @@
     <title>Ovarlak Games</title>
     <meta
       name="description"
-      content="Ovarlak Games. Tarayıcıda oynanan kısa Odysseia durakları. İlk durak: Lotophagoi."
+      content="Ovarlak Games. Tarayıcıda kalan kısa mitler. İlk oyun: Lotophagoi."
     />
     <link rel="canonical" href="https://ovarlak.games/" />
-    <meta name="theme-color" content="#0b0a0f" />
+    <meta name="theme-color" content="#d7ebc8" />
     <meta property="og:title" content="Ovarlak Games" />
     <meta
       property="og:description"
-      content="Tarayıcıda duran bir Odysseia. İndirme yok."
+      content="Tarayıcıda mit stüdyosu. İndirme yok."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ovarlak.games/" />
     <meta property="og:image" content="https://ovarlak.games/og-image.png" />
+    <link rel="icon" href="/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-CD1umOOQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dg7JRswr.css">
+    <link rel="stylesheet" href="/css/site.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
   </head>
   <body>
+    <canvas id="world" aria-hidden="true"></canvas>
+    <div class="fallback-hero" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
     <nav>
       <a class="wordmark" href="#top">Ovarlak <span>Games</span></a>
       <ul>
@@ -38,24 +51,56 @@
     </nav>
 
     <header id="top" class="hero">
-      <div class="hero-art" aria-hidden="true"></div>
-      <div class="hero-haze" aria-hidden="true"></div>
       <div class="hero-copy">
-        <h1>
-          Tarayıcıda duran bir Odysseia. Her durak ayrı bir mit, ayrı bir
-          bedel.
-        </h1>
+        <p class="kicker">Tarayıcıda mit stüdyosu</p>
+        <div class="meander" aria-hidden="true"></div>
+        <h1>Ovarlak <span>Games</span></h1>
+        <p class="lede">
+          Küçük dünyalar ekiyoruz; tarayıcıda kalıyorlar. Hesap yok, indirme yok.
+          Şimdi açık olan tek kapı bir ürünümüz: Lotophagoi.
+        </p>
         <div class="actions">
-          <a class="play" href="https://lotophagoi.ovarlak.games/">Oyna</a>
-          <a class="quiet" href="#games">Oyunlar</a>
+          <a class="pill" href="https://lotophagoi.ovarlak.games/"
+            >Lotophagoi'yi oyna <i>→</i></a
+          >
+          <a class="ghost" href="#games">Tüm oyunlar</a>
         </div>
+      </div>
+      <div class="hero-side">
+        <aside class="quote-chip">
+          <p>Mit yeterince büyükse, bir ada yeter.</p>
+          <span>Ovarlak</span>
+        </aside>
+        <a class="float-card" href="https://lotophagoi.ovarlak.games/">
+        <div class="float-media">
+          <img src="/games/lotus.png" alt="" />
+          <video
+            src="/games/lotophagoi-preview.mp4"
+            muted
+            loop
+            playsinline
+            preload="none"
+            aria-hidden="true"
+          ></video>
+        </div>
+        <div class="float-body">
+          <p class="status">Yayında</p>
+          <h2>Lotophagoi</h2>
+          <p>Dorryseus lotus yiyor. Ada güzelleşiyor. O unutuyor.</p>
+        </div>
+        <span class="play-orb" aria-hidden="true">
+          <svg viewBox="0 0 12 12" fill="currentColor">
+            <path d="M3 1.5v9l8-4.5-8-4.5z" />
+          </svg>
+        </span>
+      </a>
       </div>
     </header>
 
     <main>
       <section id="games">
         <div class="wrap">
-          <h2>Oyunlar</h2>
+          <h2 class="section">Oyunlar</h2>
           <div class="grid">
             <a class="card live" href="https://lotophagoi.ovarlak.games/">
               <div
@@ -75,7 +120,7 @@
               <div class="meta">
                 <p class="status">Yayında</p>
                 <h3>Lotophagoi</h3>
-                <p>Lotus yiyorsun. Ada güzelleşiyor. Sen unutuyorsun.</p>
+                <p>Dorryseus lotus yiyor. Ada güzelleşiyor. O unutuyor.</p>
               </div>
             </a>
             <article class="card soon">
@@ -106,12 +151,15 @@
 
       <section id="studio">
         <div class="wrap studio">
-          <h2>Stüdyo</h2>
-          <p>Küçük bir stüdyoyuz. Üç durağımız var, ikisi hâlâ inşa halinde.</p>
-          <p>İndirme yok, hesap yok. Linke tıkla, durağa in.</p>
+          <h2 class="section">Stüdyo</h2>
           <p>
-            Her durak Odysseia'nın haritasından bir an alır, kendi bedeliyle
-            biter.
+            Ovarlak Games, tarayıcıda kalan kısa mitler yapar. Üç oyunumuz var;
+            ikisi hâlâ büyüyor.
+          </p>
+          <p>İndirme yok, hesap yok. Linke tıkla, dünyaya in.</p>
+          <p>
+            Her oyun kendi adasını alır, kendi bedeliyle biter. Lotophagoi
+            ilki.
           </p>
         </div>
       </section>
@@ -132,5 +180,6 @@
       <span>© 2026 Ovarlak Games</span>
     </footer>
 
+    <script type="module" src="/js/site.js"></script>
   </body>
 </html>
