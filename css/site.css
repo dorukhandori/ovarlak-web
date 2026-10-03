@@ -439,7 +439,7 @@ h2.section {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.15rem;
 }
 
@@ -609,6 +609,12 @@ footer ul a:hover {
 @keyframes scan {
   to {
     transform: translateX(130%);
+  }
+}
+
+@media (max-width: 1180px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

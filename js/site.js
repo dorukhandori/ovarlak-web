@@ -51,7 +51,7 @@ const start = () => {
   }
 
   reveal();
-  hoverVideo(document.querySelector(".card.live"));
+  document.querySelectorAll(".card.live").forEach(hoverVideo);
   hoverVideo(document.querySelector(".float-card"));
 };
 
