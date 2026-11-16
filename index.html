@@ -2,19 +2,16 @@
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Ovarlak Games</title>
     <meta
       name="description"
-      content="Ovarlak Games. Tarayıcıda kalan kısa mitler. Lotophagoi yayında, WyrmWar erken sürümde."
+      content="Ovarlak Games: tarayıcıda kısa mitler. Beş ada, beş oyun. Lotophagoi yayında; WyrmWar ve Devran erken sürümde."
     />
     <link rel="canonical" href="https://ovarlak.games/" />
-    <meta name="theme-color" content="#d7ebc8" />
+    <meta name="theme-color" content="#f2ecd2" />
     <meta property="og:title" content="Ovarlak Games" />
-    <meta
-      property="og:description"
-      content="Tarayıcıda mit stüdyosu. İndirme yok."
-    />
+    <meta property="og:description" content="Tarayıcıda mit stüdyosu. Beş ada, beş oyun. İndirme yok." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ovarlak.games/" />
     <meta property="og:image" content="https://ovarlak.games/og-image.png" />
@@ -22,15 +19,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/site.css" />
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+          "three": "https://cdn.jsdelivr.net/npm/three@0.187.0/build/three.module.js"
         }
       }
     </script>
@@ -38,161 +34,137 @@
   <body>
     <canvas id="world" aria-hidden="true"></canvas>
     <div class="fallback-hero" aria-hidden="true"></div>
-    <div class="vignette" aria-hidden="true"></div>
+    <div class="wash" aria-hidden="true"></div>
     <div class="grain" aria-hidden="true"></div>
 
-    <nav>
+    <nav class="top">
       <a class="wordmark" href="#top">Ovarlak <span>Games</span></a>
       <ul>
-        <li><a href="#games">Oyunlar</a></li>
+        <li><a href="#oyunlar">Oyunlar</a></li>
         <li><a href="#studio">Stüdyo</a></li>
         <li><a href="#contact">İletişim</a></li>
       </ul>
+      <div class="progress" aria-hidden="true"><i></i></div>
     </nav>
 
-    <header id="top" class="hero">
+    <ol class="rail" aria-label="Adalar">
+      <li><a href="#lotophagoi"><b>I</b><span>Lotophagoi</span></a></li>
+      <li><a href="#wyrmwar"><b>II</b><span>WyrmWar</span></a></li>
+      <li><a href="#devran"><b>III</b><span>Devran</span></a></li>
+      <li><a href="#kiklop"><b>IV</b><span>Kiklop</span></a></li>
+      <li><a href="#sirenler"><b>V</b><span>Sirenler</span></a></li>
+    </ol>
+
+    <header id="top" class="hero" data-stop="top">
       <div class="hero-copy">
         <p class="kicker">Tarayıcıda mit stüdyosu</p>
-        <div class="meander" aria-hidden="true"></div>
         <h1>Ovarlak <span>Games</span></h1>
         <p class="lede">
-          Küçük dünyalar ekiyoruz; tarayıcıda kalıyorlar. Hesap yok, indirme yok.
-          Şimdi iki kapı açık: Lotophagoi ve erken sürümüyle WyrmWar.
+          Beş ada, beş kısa oyun. Üçüne bugün çıkabilirsin: Lotophagoi, WyrmWar
+          ve Devran. İndirme yok; link yeter.
         </p>
         <div class="actions">
-          <a class="pill" href="https://lotophagoi.ovarlak.games/"
-            >Lotophagoi'yi oyna <i>→</i></a
-          >
-          <a class="pill" href="https://wyrmwar.ovarlak.games/"
-            >WyrmWar'ı dene <i>→</i></a
-          >
-          <a class="ghost" href="#games">Tüm oyunlar</a>
+          <a class="pill" href="#lotophagoi">Yola çık <i>↓</i></a>
+          <a class="ghost" href="#oyunlar">Tüm oyunlar</a>
         </div>
       </div>
-      <div class="hero-side">
-        <aside class="quote-chip">
-          <p>Mit yeterince büyükse, bir ada yeter.</p>
-          <span>Ovarlak</span>
-        </aside>
-        <a class="float-card" href="https://lotophagoi.ovarlak.games/">
-        <div class="float-media">
-          <img src="/games/lotus.png" alt="" />
-          <video
-            src="/games/lotophagoi-preview.mp4"
-            muted
-            loop
-            playsinline
-            preload="none"
-            aria-hidden="true"
-          ></video>
-        </div>
-        <div class="float-body">
-          <p class="status">Yayında</p>
-          <h2>Lotophagoi</h2>
-          <p>Dorryseus lotus yiyor. Ada güzelleşiyor. O unutuyor.</p>
-        </div>
-        <span class="play-orb" aria-hidden="true">
-          <svg viewBox="0 0 12 12" fill="currentColor">
-            <path d="M3 1.5v9l8-4.5-8-4.5z" />
-          </svg>
-        </span>
-      </a>
-      </div>
+      <aside class="quote-chip">
+        <p>Mit yeterince büyükse, bir ada yeter.</p>
+        <span>Ovarlak</span>
+      </aside>
+      <p class="cue" aria-hidden="true">Kaydır, ada ada ilerle</p>
     </header>
 
     <main>
-      <section id="games">
-        <div class="wrap">
-          <h2 class="section">Oyunlar</h2>
-          <div class="grid">
-            <a class="card live" href="https://lotophagoi.ovarlak.games/">
-              <div
-                class="still"
-                style="background-image: url('/games/lotus.png')"
-              >
-                <video
-                  class="preview"
-                  src="/games/lotophagoi-preview.mp4"
-                  muted
-                  loop
-                  playsinline
-                  preload="none"
-                  aria-hidden="true"
-                ></video>
-              </div>
-              <div class="meta">
-                <p class="status">Yayında</p>
-                <h3>Lotophagoi</h3>
-                <p>Dorryseus lotus yiyor. Ada güzelleşiyor. O unutuyor.</p>
-              </div>
-            </a>
-            <a class="card live" href="https://wyrmwar.ovarlak.games/">
-              <div
-                class="still"
-                style="background-image: url('/games/wyrmwar.png')"
-              ></div>
-              <div class="meta">
-                <p class="status">Erken sürüm</p>
-                <h3>WyrmWar</h3>
-                <p>
-                  Ejderhanı seç, göğe çık. Düşürürsün, düşürülürsün. Henüz
-                  bitmedi.
-                </p>
-              </div>
-            </a>
-            <article class="card soon">
-              <div
-                class="still"
-                style="background-image: url('/games/cyclops.png')"
-              ></div>
-              <div class="meta">
-                <p class="status">Yakında</p>
-                <h3>Kiklop Mağarası</h3>
-                <p>Adını söylemezsen kimse seni bulamaz. Kimse de kurtaramaz.</p>
-              </div>
-            </article>
-            <article class="card soon">
-              <div
-                class="still"
-                style="background-image: url('/games/sirens.png')"
-              ></div>
-              <div class="meta">
-                <p class="status">Yakında</p>
-                <h3>Sirenler Geçidi</h3>
-                <p>Şarkıyı duyuyorsun. Kendini bağlı tutman gerekiyor.</p>
-              </div>
-            </article>
+      <section id="lotophagoi" class="chapter left" data-stop="lotophagoi">
+        <article class="panel live">
+          <div class="medal card-art" style="--art: url('/games/lotus.png')">
+            <video src="/games/lotophagoi-preview.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
           </div>
-        </div>
+          <p class="status"><b>Ada I</b> · Yayında</p>
+          <h2>Lotophagoi</h2>
+          <p>Dorryseus lotus yiyor. Ada güzelleşiyor. O unutuyor.</p>
+          <a class="pill" href="https://lotophagoi.ovarlak.games/">Lotophagoi'yi oyna <i>→</i></a>
+        </article>
       </section>
 
-      <section id="studio">
-        <div class="wrap studio">
-          <h2 class="section">Stüdyo</h2>
+      <section id="wyrmwar" class="chapter right" data-stop="wyrmwar">
+        <article class="panel live">
+          <div class="medal card-art" style="--art: url('/games/wyrmwar.png')"></div>
+          <p class="status"><b>Ada II</b> · Erken sürüm</p>
+          <h2>WyrmWar</h2>
+          <p>Ejderhanı seç, göğe çık. Düşürürsün, düşürülürsün. Henüz bitmedi.</p>
+          <a class="pill" href="https://wyrmwar.ovarlak.games/">WyrmWar'ı dene <i>→</i></a>
+        </article>
+      </section>
+
+      <section id="devran" class="chapter left" data-stop="devran">
+        <article class="panel live">
+          <div class="medal devran-art" style="--art: url('/games/devran.png')"></div>
+          <p class="status"><b>Ada III</b> · Erken sürüm</p>
+          <h2>Devran</h2>
           <p>
-            Ovarlak Games, tarayıcıda kalan kısa mitler yapar. Dört oyunumuz
-            var; biri yayında, biri erken sürümde, ikisi hâlâ büyüyor.
+            Çanakta üç topaç, karşında bir rakip. Durdur, dışarı at ya da
+            parçala. En uzun dönen kazanır.
           </p>
-          <p>İndirme yok, hesap yok. Linke tıkla, dünyaya in.</p>
+          <p class="note">Ad ve şifreyle hesap açıp girersin.</p>
+          <a class="pill" href="https://devran.ovarlak.games/">Devran'a gir <i>→</i></a>
+        </article>
+      </section>
+
+      <section id="kiklop" class="chapter right" data-stop="kiklop">
+        <article class="panel soon">
+          <div class="medal card-art" style="--art: url('/games/cyclops.png')"></div>
+          <p class="status"><b>Ada IV</b> · Yakında</p>
+          <h2>Kiklop Mağarası</h2>
+          <p>Adını söylemezsen kimse seni bulamaz. Kimse de kurtaramaz.</p>
+        </article>
+      </section>
+
+      <section id="sirenler" class="chapter left" data-stop="sirenler">
+        <article class="panel soon">
+          <div class="medal card-art" style="--art: url('/games/sirens.png')"></div>
+          <p class="status"><b>Ada V</b> · Yakında</p>
+          <h2>Sirenler Geçidi</h2>
+          <p>Şarkıyı duyuyorsun. Kendini bağlı tutman gerekiyor.</p>
+        </article>
+      </section>
+
+      <section id="studio" class="chapter end" data-stop="studio">
+        <article class="panel wide">
+          <p class="status">Stüdyo</p>
+          <h2>Ufukta daha çok ada var</h2>
           <p>
-            Her oyun kendi adasını alır, kendi bedeliyle biter. Lotophagoi
-            ilki. WyrmWar ikincisi: göğe çıktı, henüz bitmedi.
+            Ovarlak Games tarayıcıda kalan kısa mitler yapar. Her oyun kendi
+            adasını alır, kendi bedeliyle biter.
           </p>
-        </div>
+          <p>Üç ada açık, ikisi hâlâ sisin içinde. İndirme yok; link yeter.</p>
+
+          <h3 id="oyunlar">Tüm oyunlar</h3>
+          <ul class="index">
+            <li>
+              <a href="https://lotophagoi.ovarlak.games/"><b>I</b> Lotophagoi <em>Yayında</em><i>→</i></a>
+            </li>
+            <li>
+              <a href="https://wyrmwar.ovarlak.games/"><b>II</b> WyrmWar <em>Erken sürüm</em><i>→</i></a>
+            </li>
+            <li>
+              <a href="https://devran.ovarlak.games/"><b>III</b> Devran <em>Erken sürüm</em><i>→</i></a>
+            </li>
+            <li class="soon"><span><b>IV</b> Kiklop Mağarası <em>Yakında</em></span></li>
+            <li class="soon"><span><b>V</b> Sirenler Geçidi <em>Yakında</em></span></li>
+          </ul>
+        </article>
       </section>
     </main>
 
     <footer id="contact">
       <a class="mail" href="mailto:hello@ovarlak.games">hello@ovarlak.games</a>
       <ul>
-        <li>
-          <a href="https://www.youtube.com/@ovarlakgaming">YouTube</a>
-        </li>
+        <li><a href="https://www.youtube.com/@ovarlakgaming">YouTube</a></li>
         <li><a href="https://kick.com/ovarlakgaming">Kick</a></li>
         <li><a href="https://x.com/ovarlakgaming">X</a></li>
-        <li>
-          <a href="https://www.instagram.com/ovarlakgaming/">Instagram</a>
-        </li>
+        <li><a href="https://www.instagram.com/ovarlakgaming/">Instagram</a></li>
       </ul>
       <span>© 2026 Ovarlak Games</span>
     </footer>
