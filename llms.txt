@@ -23,3 +23,12 @@ Her oyun bir "ada"dır. Beş ada var: üçü oynanabilir, ikisi yakında.
 - [Kick](https://kick.com/ovarlakgaming)
 - [X](https://x.com/ovarlakgaming)
 - [Instagram](https://www.instagram.com/ovarlakgaming/)
+
+## English
+
+Ovarlak Games is an independent studio making short mythic games that run in the browser. Nothing to download; each game opens from a link on its own subdomain. English page: [ovarlak.games/en/](https://ovarlak.games/en/)
+
+- [Lotophagoi](https://lotophagoi.ovarlak.games/): Live. Dorryseus eats the lotus; the island grows lovelier, and he forgets. In Turkish.
+- [WyrmWar](https://wyrmwar.ovarlak.games/): Early access. Pick your dragon and take to the sky. In English.
+- [Devran](https://devran.ovarlak.games/): Early access. Real-time 1v1 spinning-top battles; the longest spin wins. Sign up with a name and password. In Turkish.
+- The Cyclops' Cave and The Sirens' Strait: coming soon.

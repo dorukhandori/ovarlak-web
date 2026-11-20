@@ -13,6 +13,11 @@ Static site for GitHub Pages, no build step. Three.js r187 comes from jsDelivr v
 Adding a game: add an island builder in `js/islands.js`, a position and camera stop in
 `js/world.js`, a `<section data-stop>` in `index.html` and a row in the "Tüm oyunlar" list.
 
+English page: `en/index.html` is a full copy of the page in English (canonical `/en/`, hreflang tr/en,
+x-default → `/en/`). Keep section ids and `data-stop` values identical to the Turkish page (the camera route
+reads them). Any copy, status or game change goes into both pages, both JSON-LD blocks and both halves of
+`llms.txt`. Lotophagoi and Devran are Turkish-only games; the English cards say so.
+
 Local preview: serve the folder root (paths are absolute), e.g. `python3 -m http.server 4180`.
 
 ## SEO and search
@@ -20,7 +25,7 @@ Local preview: serve the folder root (paths are absolute), e.g. `python3 -m http
 - `index.html` head: title, description, canonical, Open Graph/Twitter card (`og-cover.jpg`, 1200x630),
   icons, manifest and JSON-LD (`Organization`, `WebSite`, `WebPage`, `ItemList` of the live games).
   When a game's status or copy changes, update the section, the JSON-LD item and `llms.txt` together.
-- `robots.txt` allows everything and points to `sitemap.xml`. Bump `<lastmod>` in `sitemap.xml` when the page changes.
+- `robots.txt` allows everything and points to `sitemap.xml`. Bump `<lastmod>` in `sitemap.xml` when a page changes (both language URLs are listed with hreflang links).
 - `llms.txt`: plain summary for AI assistants.
 - `404.html`: GitHub Pages serves it for missing paths (`noindex`).
 - IndexNow key file: `b54f22b3beaceb34b066b9d158b80461.txt` (Bing, Yandex and others). After a deploy:

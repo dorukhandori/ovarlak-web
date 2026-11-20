@@ -767,3 +767,19 @@ footer span {
 .skip-link:focus {
   transform: none;
 }
+
+nav.top ul a.lang {
+  padding: 0.18rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.wordmark {
+  white-space: nowrap;
+}
+
+@media (max-width: 440px) {
+  nav.top li.wide-only {
+    display: none;
+  }
+}
