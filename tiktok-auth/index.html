@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ovarlak Yayinci · TikTok connected</title>
+    <meta name="robots" content="noindex" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#f2ecd2" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root { --horizon: #f2ecd2; --ink: #163226; --leaf: #3f8f5c; --rose: #c8607a; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; background: var(--horizon); color: var(--ink);
+        font-family: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif; line-height: 1.6; }
+      main { max-width: 640px; margin: 0 auto; padding: 56px 16px; }
+      p.kicker { margin: 0; font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; font-size: 0.75rem;
+        letter-spacing: 0.24em; text-transform: uppercase; color: var(--leaf); }
+      h1 { margin: 0.3rem 0 0.8rem; font-size: clamp(2rem, 7vw, 2.8rem); font-weight: 400; font-style: italic; }
+      .bad { color: var(--rose); }
+      small { display: block; margin-top: 2rem; font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; opacity: 0.75; }
+      small a { color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Ovarlak Yayinci</p>
+      <h1 id="title">Checking…</h1>
+      <p id="msg"></p>
+      <small><a href="/tiktok/">Back</a> · <a href="/privacy/">Privacy Policy</a></small>
+    </main>
+    <script>
+      const q = new URLSearchParams(location.search);
+      let expected = null;
+      try { expected = sessionStorage.getItem("ovarlak-tiktok-state"); } catch (e) {}
+      const title = document.getElementById("title"), msg = document.getElementById("msg");
+      if (q.get("error")) {
+        title.textContent = "Not connected";
+        title.className = "bad";
+        msg.textContent = "TikTok did not grant access (" + q.get("error") + "). Nothing was changed.";
+      } else if (q.get("code") && (!expected || q.get("state") === expected)) {
+        title.textContent = "TikTok connected";
+        msg.textContent = "Access granted for our own account: basic profile and upload as draft. Our server now " +
+          "finishes the connection; from now on each new Ovarlak video arrives in the TikTok inbox as a draft, " +
+          "and we post it ourselves in the TikTok app.";
+      } else {
+        title.textContent = "Not connected";
+        title.className = "bad";
+        msg.textContent = "This page was opened without a valid TikTok authorization. Start again from the Connect page.";
+      }
+    </script>
+  </body>
+</html>

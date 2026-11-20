@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ovarlak Yayinci · Connect TikTok</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#f2ecd2" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root { --horizon: #f2ecd2; --ink: #163226; --leaf: #3f8f5c; --foam: #f6f3e8; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; background: var(--horizon); color: var(--ink);
+        font-family: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif; line-height: 1.6; }
+      main { max-width: 640px; margin: 0 auto; padding: 56px 16px; }
+      p.kicker { margin: 0; font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; font-size: 0.75rem;
+        letter-spacing: 0.24em; text-transform: uppercase; color: var(--leaf); }
+      h1 { margin: 0.3rem 0 0.8rem; font-size: clamp(2rem, 7vw, 2.8rem); font-weight: 400; font-style: italic; }
+      ol { padding-left: 1.2rem; }
+      a.button { display: inline-block; margin-top: 1.2rem; padding: 0.9rem 1.6rem; border-radius: 999px;
+        background: var(--ink); color: var(--foam); text-decoration: none;
+        font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; font-weight: 600; }
+      a.button:focus-visible { outline: 2px solid var(--leaf); outline-offset: 3px; }
+      small { display: block; margin-top: 2rem; font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; opacity: 0.75; }
+      small a { color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Ovarlak Yayinci</p>
+      <h1>Connect our TikTok account</h1>
+      <p>Ovarlak Yayinci is the internal tool that sends Ovarlak Gaming's own daily short video to our own TikTok
+        account. It never posts by itself:</p>
+      <ol>
+        <li>We connect our TikTok account once with the button below (basic profile + upload as draft).</li>
+        <li>Each day, after the video goes live on YouTube, our server uploads the same video to TikTok as a
+          <strong>draft</strong>, with its caption.</li>
+        <li>TikTok sends us an inbox notification; we open the draft in the TikTok app, edit it if we want, and
+          post it ourselves.</li>
+      </ol>
+      <a class="button" id="connect" href="#">Continue with TikTok</a>
+      <small>Only Ovarlak's own account is connected. <a href="/privacy/">Privacy Policy</a> ·
+        <a href="/terms/">Terms of Service</a></small>
+    </main>
+    <script>
+      // The client key is public (it is part of TikTok's authorize URL). The state guards the callback.
+      const CLIENT_KEY = "sbawyqz9fheq1w7a32";
+      const state = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => b.toString(16).padStart(2, "0")).join("");
+      try { sessionStorage.setItem("ovarlak-tiktok-state", state); } catch (e) {}
+      const q = new URLSearchParams({
+        client_key: CLIENT_KEY,
+        scope: "user.info.basic,video.upload",
+        response_type: "code",
+        redirect_uri: "https://ovarlak.games/tiktok-auth/",
+        state: state,
+      });
+      document.getElementById("connect").href = "https://www.tiktok.com/v2/auth/authorize/?" + q.toString();
+    </script>
+  </body>
+</html>
