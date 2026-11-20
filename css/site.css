@@ -265,7 +265,7 @@ h1 span {
   font-size: 0.16em;
   letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: var(--leaf);
+  color: var(--moss);
 }
 
 .lede {
@@ -350,7 +350,7 @@ a.ghost {
   font-size: 0.6rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--leaf);
+  color: var(--moss);
 }
 
 .cue {
@@ -748,4 +748,22 @@ footer span {
   .cue::after {
     animation: none;
   }
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: var(--gutter);
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--foam);
+  font-family: var(--sans);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
 }

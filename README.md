@@ -27,3 +27,7 @@ Local preview: serve the folder root (paths are absolute), e.g. `python3 -m http
   `curl "https://api.indexnow.org/indexnow?url=https://ovarlak.games/&key=b54f22b3beaceb34b066b9d158b80461"`
 - Card art is served as WebP (`games/*.webp`); the PNGs are the sources.
 - Icons come from `favicon.svg` (rendered to PNG with headless Chrome).
+- Audit with the `seo-audit` skill (SEOmator CLI, `npm i -g @seomator/seo-audit`):
+  `seomator audit https://ovarlak.games/ --format llm --cwv --mobile` (run it outside the repo so no
+  `seomator.toml` lands here). Security-header findings (HSTS, X-Frame-Options, CSP) and the 600 s
+  cache come from GitHub Pages, which does not allow custom headers.
