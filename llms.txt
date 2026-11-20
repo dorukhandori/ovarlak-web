@@ -1,0 +1,25 @@
+# Ovarlak Games
+
+> Ovarlak Games, tarayıcıda oynanan kısa mit oyunları yapan bağımsız bir oyun stüdyosudur. İndirme yok; her oyun kendi alt alan adında, bir link ile açılır. Site ve oyunlar Türkçedir.
+
+Her oyun bir "ada"dır. Beş ada var: üçü oynanabilir, ikisi yakında.
+
+## Oyunlar
+
+- [Lotophagoi](https://lotophagoi.ovarlak.games/): Yayında. Dorryseus lotus yiyor; ada güzelleşiyor, o unutuyor. Lotus Adası'nda geçen kısa bir tarayıcı oyunu.
+- [WyrmWar](https://wyrmwar.ovarlak.games/): Erken sürüm. Ejderhanı seç, göğe çık; düşürürsün, düşürülürsün.
+- [Devran](https://devran.ovarlak.games/): Erken sürüm. Tarayıcıda gerçek zamanlı 1v1 topaç dövüşü; çanakta üç topaç, en uzun dönen kazanır. Ad ve şifreyle hesap açılır.
+- Kiklop Mağarası: Yakında.
+- Sirenler Geçidi: Yakında.
+
+## Stüdyo
+
+- [Ana sayfa](https://ovarlak.games/): Stüdyo ve tüm oyunlar.
+- İletişim: hello@ovarlak.games
+
+## Bağlantılar
+
+- [YouTube](https://www.youtube.com/@ovarlakgaming)
+- [Kick](https://kick.com/ovarlakgaming)
+- [X](https://x.com/ovarlakgaming)
+- [Instagram](https://www.instagram.com/ovarlakgaming/)

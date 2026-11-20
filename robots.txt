@@ -1,0 +1,6 @@
+# ovarlak.games
+# Arama motorlari ve yapay zeka tarayicilari serbest.
+User-agent: *
+Allow: /
+
+Sitemap: https://ovarlak.games/sitemap.xml

@@ -14,3 +14,16 @@ Adding a game: add an island builder in `js/islands.js`, a position and camera s
 `js/world.js`, a `<section data-stop>` in `index.html` and a row in the "Tüm oyunlar" list.
 
 Local preview: serve the folder root (paths are absolute), e.g. `python3 -m http.server 4180`.
+
+## SEO and search
+
+- `index.html` head: title, description, canonical, Open Graph/Twitter card (`og-cover.jpg`, 1200x630),
+  icons, manifest and JSON-LD (`Organization`, `WebSite`, `WebPage`, `ItemList` of the live games).
+  When a game's status or copy changes, update the section, the JSON-LD item and `llms.txt` together.
+- `robots.txt` allows everything and points to `sitemap.xml`. Bump `<lastmod>` in `sitemap.xml` when the page changes.
+- `llms.txt`: plain summary for AI assistants.
+- `404.html`: GitHub Pages serves it for missing paths (`noindex`).
+- IndexNow key file: `b54f22b3beaceb34b066b9d158b80461.txt` (Bing, Yandex and others). After a deploy:
+  `curl "https://api.indexnow.org/indexnow?url=https://ovarlak.games/&key=b54f22b3beaceb34b066b9d158b80461"`
+- Card art is served as WebP (`games/*.webp`); the PNGs are the sources.
+- Icons come from `favicon.svg` (rendered to PNG with headless Chrome).
